@@ -33,7 +33,7 @@ PROMPT=PromptTemplate(template=prompt_template, input_variables=["context", "que
 
 chain_type_kwargs={"prompt": PROMPT}
 
-llm=CTransformers(model="model/llama-2-7b-chat.ggmlv3.q4_0.bin",
+llm=CTransformers(model="D:/Generative AI 2024/Medical-Chatbot-Using-Llama2/model/llama-2-7b-chat.ggmlv3.q4_0.bin",
                   model_type="llama",
                   config={'max_new_tokens':512,
                           'temperature':0.8})
