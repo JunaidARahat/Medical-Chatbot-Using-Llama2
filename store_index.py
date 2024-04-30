@@ -1,5 +1,5 @@
 from src.helper import load_pdf, text_split, download_hugging_face_embeddings
-from langchain.vectorstores import Pinecone as PineconeStore
+from langchain.vectorstores import Pinecone
 import pinecone
 from dotenv import load_dotenv
 import os
@@ -25,4 +25,4 @@ pinecone.init(api_key=PINECONE_API_KEY,
 index_name="medical-chatbot"
 
 #Creating Embeddings for Each of The Text Chunks & storing
-docsearch=PineconeStore.from_texts([t.page_content for t in text_chunks], embeddings, index_name=index_name)
+docsearch=Pinecone.from_texts([t.page_content for t in text_chunks], embeddings, index_name=index_name)
