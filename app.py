@@ -4,6 +4,8 @@ from langchain.vectorstores import Pinecone as PineconeStore
 import pinecone
 from langchain.prompts import PromptTemplate
 from langchain.llms import CTransformers
+#from ctransformers.langchain import CTransformers
+
 from langchain.chains import RetrievalQA
 from dotenv import load_dotenv
 from src.prompt import *
@@ -23,7 +25,7 @@ embeddings = download_hugging_face_embeddings()
 pinecone.init(api_key=PINECONE_API_KEY,
               environment=PINECONE_API_ENV)
 
-index_name="medical-bot"
+index_name="medical-chatbot"
 
 #Loading the index
 docsearch=PineconeStore.from_existing_index(index_name, embeddings)
